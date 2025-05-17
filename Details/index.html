@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI-Powered Movie Recommender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AI-Powered Movie Recommendation System</h1>
+    <p>Discover movies you'll love using smart AI matching.</p>
+  </header>
+
+  <section id="recommendation">
+    <h2>Find Recommendations</h2>
+    <form id="recommendForm">
+      <input type="text" id="movieName" placeholder="Enter a movie you like..." required>
+      <button type="submit">Get Recommendations</button>
+    </form>
+    <div id="result"></div>
+  </section>
+
+  <section id="visuals">
+    <h2>Data Insights</h2>
+    <div class="gallery">
+      <img src="images/top_rated_movies.png" alt="Top Rated Movies">
+      <img src="images/top_avg_movies.png" alt="Top Average Rated Movies">
+      <img src="images/user_rating_distribution.png" alt="User Rating Distribution">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MovieMatch AI</p>
+  </footer>
+
+  <script>
+    document.getElementById('recommendForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const movie = document.getElementById('movieName').value;
+      // You can replace this with real API integration or Flask backend response
+      document.getElementById('result').innerHTML = `<p>Recommended movies for "<strong>${movie}</strong>" will appear here...</p>`;
+    });
+  </script>
+</body>
+</html>
+style.css
+css
+Copy
+Edit
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+}
+
+#recommendForm {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #3498db;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #ddd;
+}
